@@ -57,7 +57,10 @@ public class ExplorerSearch {
         visited[row][col] = true;
 
         int count = 1;
-        count += reachableAreaHelper(island, visited, row, col);
+        count += reachableAreaHelper(island, visited, row -1, col);
+        count += reachableAreaHelper(island, visited, row + 1, col);
+        count += reachableAreaHelper(island, visited, row, col + 1);
+        count += reachableAreaHelper(island, visited, row, col - 1);
 
         return count; 
     }
