@@ -59,4 +59,17 @@ public class ExplorerSearchTest {
         assertEquals(6, count);
 
     }
+
+    @Test
+    public void testFindStart_oneStart() {
+        int[][] island = {
+            {1,1,1},
+            {1,0,1},
+            {1,1,1}
+        };
+
+        int[] expected = {1, 1};
+        int[] actual = ExplorerSearch.findStart(island);
+        assertArrayEquals(expected, actual);
+    }
 }
