@@ -41,7 +41,7 @@ public class ExplorerSearchTest {
             {0, 0, 0, 0, 0, 0},
         };
         int actual = ExplorerSearch.reachableArea(island);
-        assertEquals(30 ,actual); // if starting points are walkable
+        assertEquals(30 ,actual); // starting points are walkable 
 
     }
 }
