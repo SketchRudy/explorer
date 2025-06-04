@@ -32,7 +32,16 @@ public class ExplorerSearchTest {
         assertEquals(0, actual);
     }
 
-    @Tes tpublic void testNoStartPoint() {
+    @Test public void testOnlyStartPoint() {
+        int[][] island = {
+            {0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0},
+        };
+        int actual = ExplorerSearch.reachableArea(island);
+        assertEquals(30 ,actual); // if starting points are walkable
 
     }
 }
