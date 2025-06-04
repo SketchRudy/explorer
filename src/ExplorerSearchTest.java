@@ -32,7 +32,8 @@ public class ExplorerSearchTest {
         assertEquals(0, actual);
     }
 
-    @Test public void testOnlyStartPoint() {
+    @Test 
+    public void testOnlyStartPointInArray() {
         int[][] island = {
             {0, 0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0, 0},
@@ -42,6 +43,20 @@ public class ExplorerSearchTest {
         };
         int actual = ExplorerSearch.reachableArea(island);
         assertEquals(30 ,actual); // starting points are walkable 
+    }
+
+    @Test 
+    public void testReachableAreaHelper_smallIsland() {
+        int[][] island = {
+            {0,1,2},
+            {1,1,3},
+            {2,1,1}
+        };
+
+        boolean[][] visited = new boolean[island.length][island[0].length];
+        int count = ExplorerSearch.reachableAreaHelper(island, visited, 0, 0);
+
+        assertEquals(6, count);
 
     }
 }
