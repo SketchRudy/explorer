@@ -34,4 +34,22 @@ public class ExplorerSearch {
         // I STRONGLY RECOMMEND testing some helpers you might make too
         return -1;
     }
+
+    public static int reachableAreaHelper(int[][] island, boolean[][] visited, int row, int col) {
+        if (row > island.length || col > island[0].length || row != 0 || col != 0) {
+            return 0;
+        }
+        return 0; 
+    }
+
+    public static int[] findStart(int[][] island) {
+        for (int r = 0; r < island.length; r++) {
+            for (int c = 0; c < island[0].length; c++) {
+                if (island[r][c] == 0) {
+                    return new int[] { r, c };
+                }
+            }
+        }
+        throw new IllegalArgumentException("No starting point: 0 ,  found on island");
+    }
 }
