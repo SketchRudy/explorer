@@ -33,8 +33,13 @@ public class ExplorerSearch {
         // Please also make more test cases
         // I STRONGLY RECOMMEND testing some helpers you might make too
 
+        int[] start = findStart(island);
+        int row = start[0];
+        int col = start[1];
+
         boolean[][] visited = new boolean[island.length][island[0].length];
-        return -1;
+        int result = reachableAreaHelper(island, visited, row, col);
+        return result;
     }
 
     public static int reachableAreaHelper(int[][] island, boolean[][] visited, int row, int col) {
